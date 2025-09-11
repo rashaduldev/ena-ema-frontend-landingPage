@@ -4,9 +4,11 @@ import theme from "@/config/theme.json";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
-import Providers from "@/partials/Providers";
+import Providers from "@/layouts/providers/Providers";
 import "@/styles/main.css";
 import { GoogleTagManager } from "@next/third-parties/google";
+import LenisProvider from "@/layouts/providers/LenisProvider";
+import AOSInit from "@/components/AOSInit";
 
 export default function RootLayout({
   children,
@@ -66,10 +68,13 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <TwSizeIndicator />
         <Providers>
-          <Header />
-          <SearchModal />
-          <main>{children}</main>
-          <Footer />
+          <LenisProvider>
+            <AOSInit />
+            <Header />
+            <SearchModal />
+            <main>{children}</main>
+            <Footer />
+          </LenisProvider>
         </Providers>
       </body>
     </html>

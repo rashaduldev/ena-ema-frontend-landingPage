@@ -9,7 +9,7 @@ import scrool2 from "../../../public/images/image-2.png";
 import scrool3 from "../../../public/images/image-1.png";
 import scrool4 from "../../../public/images/image-2.png";
 
-const AutoScrollSection = () => {
+const AutoScrollSection: React.FC = () => {
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
@@ -28,12 +28,8 @@ const AutoScrollSection = () => {
 
     const step = () => {
       if (!slider.current) return;
-
-      // Get the current translate value
-      const track = slider.current.track;
-      // Move slider by a small fraction
-      slider.current.moveToIdx(track.details.rel + 0.01); // incrementally move
-
+      const { rel } = slider.current.track.details;
+      slider.current.moveToIdx(rel + 0.01); // smooth incremental movement
       raf = requestAnimationFrame(step);
     };
 
@@ -44,19 +40,24 @@ const AutoScrollSection = () => {
   const images = [scrool1, scrool2, scrool3, scrool4];
 
   return (
-    <section className="pt-32">
+    <section data-aos="fade-up"
+      data-aos-duration="1000" className="pt-32" aria-label="Auto scrolling image showcase">
       <div ref={sliderRef} className="keen-slider">
         {images.map((img, idx) => (
-          <div key={idx} className="keen-slider__slide flex items-center justify-center">
-            <div className="h-[470px] w-full relative">
+          <figure
+            key={idx}
+            className="keen-slider__slide flex items-center justify-center"
+          >
+            <div className="relative h-[470px] w-full">
               <Image
                 src={img}
-                alt={`scrool${idx + 1}`}
+                alt={`Showcase image ${idx + 1}`}
                 fill
                 className="rounded-lg object-cover"
+                priority={idx === 0} // first image loads fast
               />
             </div>
-          </div>
+          </figure>
         ))}
       </div>
     </section>

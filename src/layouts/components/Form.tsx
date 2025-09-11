@@ -10,7 +10,8 @@ import { CiStar } from "react-icons/ci";
 const Form = () => {
     return (
         <>
-              <form className="p-8 md:p-9 border border-border shadow-xl shadow-[#1FFFA5]/20 rounded-lg">
+              <form data-aos="fade-up"
+      data-aos-duration="1000" className="p-8 md:p-9 border border-border shadow-xl shadow-[#1FFFA5]/20 rounded-lg">
       <div className="flex flex-col md:flex-row items-center justify-center gap-3 w-full mb-6">
 
         {/* Name Input */}
@@ -60,7 +61,8 @@ const Form = () => {
 </Link>
 
     </form>
-        <div className="flex flex-wrap md:flex-row items-center justify-center gap-10 md:gap-16 mt-10 md:mt-5">
+        <div data-aos="fade-up"
+      data-aos-duration="1000" className="flex flex-wrap md:flex-row items-center justify-center gap-10 md:gap-16 mt-10 md:mt-5">
       <p className="flex items-center gap-2"><AiOutlineLock />SSL secure</p>
       <p className="flex items-center gap-2"><BsCheck2 />Money-back guaranteed</p>
       <p className="flex items-center gap-2"><CiStar />Satisfaction guaranteed</p>

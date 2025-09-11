@@ -19,3 +19,5 @@
   @import "./buttons.css";
   @import "./search.css";
 }
+
+@import "aos/dist/aos.css";
