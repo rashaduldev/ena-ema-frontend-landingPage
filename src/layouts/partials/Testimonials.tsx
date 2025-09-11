@@ -25,16 +25,10 @@ const Testimonials = ({ data }: { data: PageData }) => {
         <section className="section">
           <div className="container">
             <div className="row">
-              <div className="mx-auto mb-12 text-center md:col-10 lg:col-8 xl:col-6">
+              <div className="mb-10">
                 <h2
-                  dangerouslySetInnerHTML={markdownify(data.frontmatter.title)}
-                  className="mb-4"
-                />
-                <p
-                  dangerouslySetInnerHTML={markdownify(
-                    data.frontmatter.description!,
-                  )}
-                />
+                  className="mb-4 lg:tracking-[-2px]">What Our Clients Are Saying <span className="text-primary">About Us</span></h2>
+                <p>Real feedback from real businesses who have seen real results.</p>
               </div>
               <div className="col-12">
                 <Swiper
@@ -59,7 +53,7 @@ const Testimonials = ({ data }: { data: PageData }) => {
                   {data.frontmatter.testimonials.map(
                     (item: Testimonial, index: number) => (
                       <SwiperSlide key={index}>
-                        <div className="rounded-lg bg-light px-7 py-10 ">
+                        <div className="rounded-lg bg-[#192420] px-7 py-10 ">
                           <div className="text-text-dark ">
                             <svg
                               width="33"

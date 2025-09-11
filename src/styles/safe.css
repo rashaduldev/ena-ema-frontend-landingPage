@@ -10,20 +10,6 @@ input#nav-toggle:checked + label #hide-button {
 input#nav-toggle:checked ~ #nav-menu {
   @apply block;
 }
-
-/* swiper pagination */
-.swiper-pagination {
-  @apply mt-9 flex items-center justify-center space-x-2 text-center;
-}
-
-.swiper-pagination-bullet {
-  @apply h-2.5 w-2.5 rounded-full bg-light opacity-100;
-}
-
-.swiper-pagination-bullet-active {
-  @apply h-4 w-4 bg-primary;
-}
-
 /*  */
 
 /* hide scrollbar for all browsers */
@@ -31,6 +17,6 @@ input#nav-toggle:checked ~ #nav-menu {
   display: none;
 }
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
 }

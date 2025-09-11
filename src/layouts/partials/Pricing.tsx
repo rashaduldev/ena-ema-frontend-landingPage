@@ -18,6 +18,7 @@ const packages: Package[] = [
       "1 Landing Page (Design + Development)",
       "Hosting Deployment",
       "5-Day Delivery",
+      "Basic Support",
     ],
     note: "Perfect for solopreneurs",
   },
@@ -29,6 +30,7 @@ const packages: Package[] = [
       "Extra Custom Section",
       "Free Hosting Setup",
       "Free Consultation Call",
+      "Priority Support",
     ],
     note: "Best balance of value & features",
     popular: true,
@@ -41,6 +43,7 @@ const packages: Package[] = [
       "Advanced Animations",
       "Priority Delivery (3 Days)",
       "6 Months Free Support",
+      "Performance Optimization",
     ],
     note: 'For brands & agencies wanting "wow"',
   },
@@ -51,54 +54,56 @@ const Pricing: React.FC = () => {
     <section className="py-16 bg-black">
       <div className="container mx-auto px-4">
         {/* Headline */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Simple, Transparent Pricing — <span>Choose Your Plan</span>
+        <h2 className="text-3xl md:text-5xl font-medium lg:tracking-[-2px]">
+          Simple, Transparent Pricing — <span className="text-primary">Choose Your Plan</span>
         </h2>
+        <p className="mt-2">No hidden fees, no surprises. Just premium landing pages at unbeatable prices.</p>
 
         {/* Pricing Cards */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 justify-center">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 justify-center py-12">
           {packages.map((pkg, idx) => (
             <div
               key={idx}
-              className={`flex-1 border rounded-xl shadow-lg p-8 flex flex-col justify-between transition-transform hover:scale-105 ${
-                pkg.popular ? "border-primary bg-primary/10" : "bg-white"
+              className={`flex-1 border rounded-xl shadow-lg p-9 flex flex-col justify-between transition-transform duration-500 hover:scale-105 bg-dark text-text-light relative ${
+                pkg.popular ? "border-2 border-primary" : "border-border"
               }`}
             >
+              {
+                pkg.popular &&(
+                  <p className="text-xs absolute py-[6px] px-3 text-primary border border-primary rounded-full bg-dark -top-4">Most popular</p>
+                )
+              }
               <div>
-                <h3
-                  className={`text-2xl font-semibold mb-4 ${
-                    pkg.popular ? "text-primary" : "text-gray-900"
-                  }`}
+                <div className="flex justify-between">
+                  <div>
+                  <h3
+                  className={`text-2xl font-bold tracking-[-1px]`}
                 >
-                  {pkg.title} {pkg.popular && "— Most Popular"}
+                  {pkg.title} {pkg.popular}
                 </h3>
-                <p className="text-3xl font-bold mb-6">{pkg.price}</p>
+                <p className="text-sm mt-2">{pkg.note} </p>
+                </div>
+                <p className="text-2xl font-bold tracking-[-1px] text-primary">{pkg.price}</p>
+                </div>
+                <hr className="my-10 text-primary/10" />
 
-                <ul className="flex flex-col gap-3 mb-6">
+                <ul className="list-disc pl-5 space-y-2 marker:text-primary marker:text-lg">
                   {pkg.features.map((feat, i) => (
-                    <li key={i} className="flex items-center gap-2 text-gray-700">
-                      <span className="text-green-500 font-bold">✔</span> {feat}
+                    <li key={i} className="text-sm text-text">
+                      {feat}
                     </li>
                   ))}
                 </ul>
-
-                <p className="italic text-gray-500">{pkg.note}</p>
               </div>
 
               <a
                 href="#"
-                className="mt-6 inline-block text-center bg-primary text-white font-semibold py-3 rounded-lg hover:bg-primary-dark transition"
+                className={`mt-6 btn ${pkg.popular?"btn-primary":"btn-secondary"}`}
               >
                 Start My Project →
               </a>
             </div>
           ))}
-        </div>
-
-        {/* Scarcity Banner */}
-        <div className="mt-12 text-center bg-yellow-100 text-yellow-900 font-semibold py-4 rounded-lg">
-          ⚡ We only onboard 5 new clients per month. 2 spots left for this month — secure
-          yours today.
         </div>
       </div>
     </section>

@@ -59,7 +59,7 @@ const WhyChooseUs: React.FC = () => {
           We combine proven conversion frameworks with agency-level design to deliver results that matter.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-9">
           {cards.map((card, idx) => (
             <div
               key={idx}
