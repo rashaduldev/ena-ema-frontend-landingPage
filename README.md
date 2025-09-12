@@ -4,7 +4,7 @@
 **Task:** Pixel-perfect conversion of a Figma landing page into a Next.js project  
 **Submission Date:** September 12, 2025  
 **Live Demo:** [Insert Vercel Link Here]  
-**GitHub Repository:** [Insert Repository Link Here]  
+**GitHub Repository:** [https://ena-ema-landing.vercel.app]  
 
 ---
 
@@ -51,18 +51,27 @@ src/
 ├─ hooks/           # Custom hooks (Lenis, AOS)
 ├─ styles/          # Global and custom CSS
 └─ pages/           # Next.js pages
+```
 
-Installation & Development
+# Installation & Development
 
-Clone the repository:
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the repository
+```bash
 git clone https://github.com/your-username/ena-ema-frontend-task.git
 cd ena-ema-frontend-task
-Install dependencies:
-
+```
+### 2.Install dependencies:
+```bash
 yarn install
-# or npm install
+# or 
+npm install
+```
 
-
-Run the development server:
-
+### Run the development server:
+```bash
 yarn dev
+```
+
+Do you also want me to include **Build & Deployment** instructions (like `yarn build` and `yarn start`) in the README?

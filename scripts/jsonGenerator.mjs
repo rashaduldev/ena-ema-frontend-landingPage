@@ -4,7 +4,6 @@ import path from "path";
 
 const CONTENT_DEPTH = 2;
 const JSON_FOLDER = "./.json";
-const BLOG_FOLDER = "src/content/blog";
 
 // get data from markdown
 const getData = (folder, groupDepth) => {
@@ -53,13 +52,16 @@ try {
     fs.mkdirSync(JSON_FOLDER);
   }
 
+  // directly use the blog folder here
+  const postsData = getData("src/content/blog", 2);
+
   // create json files
   fs.writeFileSync(
     `${JSON_FOLDER}/posts.json`,
-    JSON.stringify(getData(BLOG_FOLDER, 2)),
+    JSON.stringify(postsData),
   );
 
-  // merger json files for search
+  // merge json files for search
   const posts = JSON.parse(
     fs.readFileSync(`${JSON_FOLDER}/posts.json`, "utf8"),
   );
