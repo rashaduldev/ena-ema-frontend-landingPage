@@ -5,12 +5,10 @@ import React from "react";
 import { getMDData } from "@/helpers/mdHelper";
 import { markdownify } from "@/lib/utils/textConverter";
 import Link from "next/link";
-import defaultLogo from '../../../public/images/logo.png';
-
 const Banner = () => {
   const homepage = getMDData<{ banner: any; aboutme: any }>("homepage/_index.md");
   const { banner } = homepage;
-  const logoPath = banner.logo ? banner.logo : defaultLogo;
+  const logoPath = banner.logo ? banner.logo : "/images/logo.png";
 
   
   return (
