@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BsStars } from "react-icons/bs";
 import React from "react";
 import { getMDData } from "@/helpers/mdHelper";
+import logoimg from "../../../public/images/Logo.png";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const Banner = () => {
@@ -22,7 +23,7 @@ const Banner = () => {
             className="mx-auto"
             height={27}
             width={120}
-            src={banner.logo || "logoimg"}
+            src={banner.logo || logoimg}
             alt="Company logo"
             priority
           />

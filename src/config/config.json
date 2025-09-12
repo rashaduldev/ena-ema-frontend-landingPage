@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "ena-ema",
-    "base_url": "https://ena-ema.netlify.app",
+    "base_url": "https://ena-ema-landing.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -13,9 +13,9 @@
   },
 
   "settings": {
-    "search": true,
-    "sticky_header": true,
-    "theme_switcher": true,
+    "search": false,
+    "sticky_header": false,
+    "theme_switcher": false,
     "default_theme": "dark",
     "pagination": 2,
     "summary_length": 200,
