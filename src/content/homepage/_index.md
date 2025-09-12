@@ -5,9 +5,9 @@ banner:
   highlight: "Trusted by 30+ startups & entrepreneurs worldwide"
   logo: "/images/logo.png"
   button:
-    enable: true
+    enable: false
     label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/nextplate"
+    link: "enaema.com"
 
 form:
   fields:

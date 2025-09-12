@@ -48,7 +48,7 @@ const Form = () => {
         </div>
 
         {/* Submit Button */}
-        <Link href={form.submit.link} className="btn btn-primary flex items-center gap-2 justify-center">
+        <Link href={form.submit.link} className="btn btn-primary flex items-center justify-center">
           {form.submit.label} <IoArrowForwardOutline />
         </Link>
       </form>

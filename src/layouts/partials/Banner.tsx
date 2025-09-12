@@ -9,7 +9,7 @@ import Link from "next/link";
 const Banner = () => {
   const homepage = getMDData<{ banner: any; aboutme: any }>("homepage/_index.md");
   const { banner } = homepage;
-  const logoPath = banner.logo || "/images/Logo.png";
+  const logoPath = banner.logo || "/images/logo.png" || "Company Logo";
 
   
   return (
