@@ -48,7 +48,7 @@ const Logo = ({ src, width, height }: { src?: string; width?: number; height?: n
           width={parsedWidth}
           height={parsedHeight}
           priority
-          className="h-auto w-auto" // let Next.js size properly
+          className="h-auto w-auto"
         />
       ) : logo_text ? (
         <span>{logo_text}</span>
