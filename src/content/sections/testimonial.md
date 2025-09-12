@@ -1,27 +1,27 @@
 ---
 enable: true
-title: "What Users Are Saying About Nextplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Nextplate."
+title: "What Our Clients Are Saying <span class='text-primary'>Just 5 Days</span>"
+description: "Real feedback from real businesses who have seen real results."
 
 # Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Sarah Johnson"
+    designation: "SaaS Founder"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "They delivered a landing page better than agencies charging 10x more. My conversion rate doubled within the first week!"
 
   - name: "Marvin McKinney"
     designation: "Web Designer"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "Fast, reliable, and professional. My conversions doubled and I'm getting more quality leads than ever before."
 
   - name: "Marvin McKinney"
     designation: "Web Designer"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "Best investment for my business. The ROI was immediate and substantial. Will definitely order again."
 
   - name: "Marvin McKinney"
     designation: "Web Designer"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "They delivered a landing page better than agencies charging 10x more. My conversion rate doubled within the first week!"
 ---

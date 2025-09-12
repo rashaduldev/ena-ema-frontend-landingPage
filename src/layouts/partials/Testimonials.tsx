@@ -3,6 +3,7 @@
 import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Testimonial } from "@/types";
+import { FaStar } from "react-icons/fa6";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,15 +23,17 @@ const Testimonials = ({ data }: { data: PageData }) => {
   return (
     <>
       {data.frontmatter.enable && (
-        <section className="section">
+        <section className="section bg-dark">
           <div className="container">
             <div className="row">
-              <div className="mb-10">
-                <h2
-                  className="mb-4 lg:tracking-[-2px]">What Our Clients Are Saying <span className="text-primary">About Us</span></h2>
-                <p>Real feedback from real businesses who have seen real results.</p>
-              </div>
-              <div className="col-12">
+       <div data-aos="fade-up" data-aos-duration="1000" className="mb-10">
+            <h2
+              className="mb-4 lg:tracking-[-2px]"
+              dangerouslySetInnerHTML={{ __html: data.frontmatter.title }}
+            />
+            <p>{data.frontmatter.description}</p>
+          </div>
+              <div data-aos="fade-up" data-aos-duration="1000" className="col-12">
                 <Swiper
                   modules={[Autoplay, Pagination]}
                   pagination={{ clickable: true }}
@@ -53,45 +56,36 @@ const Testimonials = ({ data }: { data: PageData }) => {
                   {data.frontmatter.testimonials.map(
                     (item: Testimonial, index: number) => (
                       <SwiperSlide key={index}>
-                        <div className="rounded-lg bg-[#192420] px-7 py-10 ">
+                        <div className="rounded-lg bg-[#192420] px-7 py-10">
                           <div className="text-text-dark ">
-                            <svg
-                              width="33"
-                              height="20"
-                              viewBox="0 0 33 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
+                           </div>
+                           <div className="flex items-center gap-1 text-primary">
+                            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+                           </div>
                           <blockquote
-                            className="mt-8"
+                            className="mt-8 text-balance"
                             dangerouslySetInnerHTML={markdownify(item.content)}
                           />
                           <div className="mt-11 flex items-center">
-                            <div className="text-text-dark ">
+                            <div className="text-text-dark">
                               <ImageFallback
-                                height={50}
-                                width={50}
+                                height={36}
+                                width={36}
                                 className="rounded-full"
                                 src={item.avatar}
                                 alt={item.name}
                               />
                             </div>
                             <div className="ml-4">
-                              <h3
+                              <p
                                 dangerouslySetInnerHTML={markdownify(item.name)}
-                                className="h5 font-primary font-semibold"
+                                className="font-medium text-text-light"
                               />
                               <p
                                 dangerouslySetInnerHTML={markdownify(
                                   item.designation,
                                 )}
-                                className="text-text-dark "
+                                className="text-sm"
                               />
                             </div>
                           </div>

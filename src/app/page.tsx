@@ -9,7 +9,7 @@ import Cta from "@/partials/Cta";
 import FCta from "@/partials/FCta";
 import FAQ from "@/partials/FAQ";
 import Process from "@/partials/Process";
-import Hero from "@/partials/Hero";
+import Banner from "@/partials/Banner";
 
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <SeoMeta />
-      <Hero/>
+      <Banner/>
       <AutoScrollSection/>
       <WhyChooseUs/>
       <PortfollioSection />

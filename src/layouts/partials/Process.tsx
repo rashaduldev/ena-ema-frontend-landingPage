@@ -1,69 +1,62 @@
-"use client";
-
+import { getMDData } from "@/helpers/mdHelper";
+import { ProcessData } from "@/types";
 import React from "react";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaPalette } from "react-icons/fa6";
+import { LuRocket } from "react-icons/lu";
+import { PiUser } from "react-icons/pi";
 
-interface Step {
-  title: string;
-  description: string;
-  icon?: React.ReactNode;
-}
+const iconMap: Record<string, React.ReactNode> = {
+  PiUser: <PiUser />,
+  FaPalette: <FaPalette />,
+  LuRocket: <LuRocket />,
+};
 
-const steps: Step[] = [
-  {
-    title: "Book Your Project",
-    description: "Fill out a short form and we will get started immediately.",
-    icon: (
-      <FaRegUserCircle className="p-6 bg-primary text-text-light rounded-full border border-border text-3xl" />
-    ),
-  },
-  {
-    title: "Project Planning",
-    description: "We plan the workflow, design, and development timeline.",
-    icon: (
-      <FaRegUserCircle className="p-6 bg-primary text-text-light rounded-full border border-border text-3xl" />
-    ),
-  },
-  {
-    title: "Go Live",
-    description: "Your landing page is deployed and live in just 5 days.",
-    icon: (
-      <FaRegUserCircle className="p-6 bg-primary text-text-light rounded-full border border-border text-3xl" />
-    ),
-  },
-];
+const processData = getMDData<ProcessData>("sections/process.md");
 
 const Process: React.FC = () => {
   return (
-    <section className="section py-16" aria-labelledby="process-heading">
-      <div className="container mx-auto px-4 text-center">
+    <section
+      className="section py-16 relative overflow-hidden bg-[#151E1B]"
+      aria-labelledby="process-heading"
+    >
+      {/* Left gradient */}
+      <div
+        className="pointer-events-none absolute left-0 top-0 w-[46%] h-full 
+                   bg-gradient-to-r from-primary/20 via-[#192420] to-transparent"
+      />
+
+      {/* Bottom fade to match next section */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 w-[36%] h-32 
+                   bg-gradient-to-b from-transparent to-[#151E1B]"
+      />
+
+      <div className="relative mx-auto px-4 text-center z-10">
         {/* Section heading */}
-        <header data-aos="fade-up"
-      data-aos-duration="1000">
-          <h2
-            id="process-heading"
-            className="text-3xl md:text-5xl font-semibold tracking-tight"
-          >
-            From Idea to Live Landing Page in{" "}
-            <span className="text-primary">Just 5 Days</span>
+        <header data-aos="fade-up" data-aos-duration="1000">
+          <h2 id="process-heading">
+            <span dangerouslySetInnerHTML={{ __html: processData.heading }} />
           </h2>
-          <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-            Our streamlined process ensures fast delivery without compromising
-            quality.
-          </p>
+          <p className="mt-4 max-w-2xl mx-auto">{processData.subheading}</p>
         </header>
 
         {/* Steps */}
-        <div className="flex flex-col lg:flex-row gap-8 mt-12">
-          {steps.map((step, index) => (
-            <article data-aos="fade-up"
-      data-aos-duration="1000"
+        <div className="flex flex-wrap flex-row gap-8 mt-12 justify-center">
+          {processData.steps.map((step, index) => (
+            <article
+              data-aos="fade-up"
+              data-aos-duration="1000"
               key={index}
-              className="bg-dark p-8 border border-border rounded-lg flex flex-col items-center text-center hover:shadow-lg transition"
+              className="relative bg-dark p-8 border border-border rounded-lg flex flex-col items-center text-center w-[304px] mx-auto lg:mx-0"
             >
-              {step.icon && <div>{step.icon}</div>}
-              <h3 className="mt-6 text-xl font-medium text-white">{step.title}</h3>
-              <p className="mt-3 text-gray-300">{step.description}</p>
+              <div className="flex items-center justify-center bg-secondary text-primary text-2xl p-6 rounded-full">
+                {iconMap[step.icon]}
+              </div>
+              <p className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs px-2 py-1 text-primary bg-dark border border-primary rounded-full">
+                {step.day}
+              </p>
+              <h3 className="mt-6 text-xl font-medium">{step.title}</h3>
+              <p className="mt-3 text-sm">{step.description}</p>
             </article>
           ))}
         </div>

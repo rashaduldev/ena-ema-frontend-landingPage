@@ -1,24 +1,29 @@
 {
   "main": [
     {
+      "name": "linkedin",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/"
+    },
+    {
       "name": "facebook",
       "icon": "FaFacebook",
       "link": "https://www.facebook.com/"
     },
     {
-      "name": "twitter",
-      "icon": "FaTwitter",
-      "link": "https://twitter.com/"
+      "name": "instagram",
+      "icon": "CiInstagram",
+      "link": "https://www.instagram.com/"
     },
     {
-      "name": "github",
-      "icon": "FaGithub",
-      "link": "https://www.github.com/"
+      "name": "behance",
+      "icon": "FaBehance",
+      "link": "https://www.behance.com/"
     },
     {
-      "name": "linkedin",
-      "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/"
+      "name": "dribbble",
+      "icon": "FaDribbble",
+      "link": "https://dribbble.com/"
     }
   ]
 }

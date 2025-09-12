@@ -6,9 +6,9 @@ try {
   // create folder if it doesn't exist
   if (!fs.existsSync(JSON_FOLDER)) {
     fs.mkdirSync(JSON_FOLDER);
-    console.log("✅ .json folder created");
+    console.log(".json folder created");
   } else {
-    console.log("ℹ️ .json folder already exists");
+    console.log(".json folder already exists");
   }
 
   // create empty json files so project doesn't break
@@ -17,5 +17,5 @@ try {
 
   console.log("✅ posts.json and search.json generated (empty)");
 } catch (err) {
-  console.error("❌ Error:", err);
+  console.error("Error:", err);
 }

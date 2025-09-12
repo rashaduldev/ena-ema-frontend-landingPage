@@ -6,6 +6,7 @@
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
+    "logo_darkmode": "/images/logo-dark.png",
     "logo_width": "150",
     "logo_height": "27",
     "logo_text": "Ena-Ema"
@@ -23,7 +24,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Rashadul dev](https://uivibe.me)"
+    "copyright": "© All rights reserved to Ena Ema Technologies"
   },
 
   "navigation_button": {
@@ -39,12 +40,12 @@
 
   "disqus": {
     "enable": true,
-    "shortname": "rashaduldev-template",
+    "shortname": "ena-ema",
     "settings": {}
   },
 
   "metadata": {
-    "meta_author": "Rashaduldev",
+    "meta_author": "ena-ema",
     "meta_image": "/images/og-image.png",
     "meta_description": "ena-ema tech"
   }

@@ -1,62 +1,47 @@
-"use client";
+import React from "react";
+import { getMDData } from "@/helpers/mdHelper";
+import { FAQData } from "@/types";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+const faqData = getMDData<FAQData>("sections/faq.md");
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqs: FAQItem[] = [
-  { question: "How long does it take?", answer: "5 days from start to finish - design, development, and deployment included." },
-  { question: "Do you provide revisions?", answer: "Yes, unlimited revisions until you're 100% satisfied with the final result." },
-  { question: "What’s the payment process?", answer: "50% upfront to get started, 50% after final delivery and your approval." },
-  { question: "Can you deploy on my hosting?", answer: "Absolutely! Deployment is included in every package, on your hosting or ours." },
-  { question: "Why are your prices so affordable compared to agencies?", answer: "We run lean without big overheads - you get the same agency-level quality at a fraction of the cost." },
-];
-
-const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(0); 
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
-
+const FAQ: React.FC = () => {
   return (
-    <div className="max-w-[960px] mx-auto my-10 space-y-6">
-      <h2 className="text-3xl md:text-5xl font-medium mb-12 text-center">Got Questions? We’ve Got Answers.</h2>
-      {faqs.map((faq, i) => (
-        <div key={i} className="bg-[#192420] rounded-xl text-left overflow-hidden">
-          {/* Ellipse icon above question */}
-          <div className="flex justify-start pl-6 mt-4">
-            <span className="w-3 h-3 bg-primary rounded-full"></span>
-          </div>
+    <section className="relative pb-32 bg-dark -mt-10">
+      <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-t from-light/10 via-light/5 to-transparent"></div>
 
-          <button
-            onClick={() => toggle(i)}
-            className="w-full text-left px-6 py-4 cursor-pointer"
+      <div className="max-w-[960px] mx-auto my-10 space-y-6 relative z-10">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="mb-12 text-center"
+        >
+          <span dangerouslySetInnerHTML={{ __html: faqData.title }} />
+        </h2>
+
+        {faqData.faqs.map((faq, i) => (
+          <div
+            key={i}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="relative group bg-[#192420] rounded-xl text-left overflow-hidden z-10"
           >
-            <span className="font-bold text-2xl tracking-[-1px]">{faq.question}</span>
-          </button>
+            <div className="flex justify-start pl-6 mt-4">
+              <span className="w-3 h-3 bg-primary rounded-full"></span>
+            </div>
 
-          <AnimatePresence initial={false}>
-            {openIndex === i && (
-              <motion.div
-                key="content"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="px-8 pb-6 overflow-hidden text-lg text-text"
-              >
-                {faq.answer}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
-    </div>
+            <div className="w-full text-left px-6 py-4">
+              <span className="font-bold text-2xl tracking-[-1px]">
+                {faq.question}
+              </span>
+            </div>
+
+            <div className="px-8 pb-6 text-lg text-text">{faq.answer}</div>
+
+            <div className="absolute bottom-0 left-0 w-full h-52 bg-[url('/images/header-top.png')] rotate-180 bg-cover bg-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"></div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

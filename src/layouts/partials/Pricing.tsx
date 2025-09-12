@@ -1,85 +1,43 @@
-"use client";
+import Link from "next/link";
 import React from "react";
-interface Package {
-  title: string;
-  price: string;
-  features: string[];
-  note: string;
-  popular?: boolean;
-}
-
-const packages: Package[] = [
-  {
-    title: "Basic",
-    price: "$200",
-    features: [
-      "1 Landing Page (Design + Development)",
-      "Hosting Deployment",
-      "5-Day Delivery",
-      "Basic Support",
-    ],
-    note: "Perfect for solopreneurs",
-  },
-  {
-    title: "Standard",
-    price: "$300",
-    features: [
-      "Everything in Basic",
-      "Extra Custom Section",
-      "Free Hosting Setup",
-      "Free Consultation Call",
-      "Priority Support",
-    ],
-    note: "Best balance of value & features",
-    popular: true,
-  },
-  {
-    title: "Premium",
-    price: "$500",
-    features: [
-      "Everything in Standard",
-      "Advanced Animations",
-      "Priority Delivery (3 Days)",
-      "6 Months Free Support",
-      "Performance Optimization",
-    ],
-    note: 'For brands & agencies wanting "wow"',
-  },
-];
+import { IoArrowForwardOutline } from "react-icons/io5";
+import { getMDData } from "@/helpers/mdHelper";
+import { PricingData } from "@/types";
 
 const Pricing: React.FC = () => {
+  const data = getMDData<PricingData>("sections/pricing.md");
+
   return (
-    <section className="py-16 bg-black" aria-labelledby="pricing-heading">
+    <section className="py-16" aria-labelledby="pricing-heading">
       <div className="container mx-auto px-4">
         {/* Headline */}
-        <header data-aos="fade-up"
-      data-aos-duration="1000" className="mb-12">
+        <header data-aos="fade-up" data-aos-duration="1000" className="mb-12">
           <h2
             id="pricing-heading"
-            className="text-3xl md:text-5xl font-medium lg:tracking-[-2px]"
-          >
-            Simple, Transparent Pricing —{" "}
-            <span className="text-primary">Choose Your Plan</span>
-          </h2>
-          <p className="mt-2 text-gray-300">
-            No hidden fees, no surprises. Just premium landing pages at
-            unbeatable prices.
-          </p>
+            dangerouslySetInnerHTML={{ __html: data.title }}
+          />
+          <p className="mt-2">{data.subtitle}</p>
         </header>
 
         {/* Pricing Cards */}
-        <div data-aos="fade-up"
-      data-aos-duration="1000" className="flex flex-col lg:flex-row gap-6 md:gap-8 justify-center">
-          {packages.map((pkg, idx) => (
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="flex flex-col lg:flex-row gap-6 md:gap-12 justify-center"
+        >
+          {data.packages.map((pkg, idx) => (
             <article
               key={idx}
-              className={`flex-1 border rounded-xl shadow-lg p-9 flex flex-col justify-between transition-transform duration-500 hover:scale-105 bg-dark text-text-light relative ${
+              className={`flex-1 rounded-xl shadow-lg p-9 flex flex-col justify-between bg-dark text-text-light relative ${
                 pkg.popular ? "border-2 border-primary" : "border-border"
               }`}
             >
               {pkg.popular && (
-                <p data-aos="fade-up"
-      data-aos-duration="1000" className="text-xs absolute py-[6px] px-3 text-primary border border-primary rounded-full bg-dark -top-4">
+                <p
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  className="text-xs absolute py-[6px] px-3 text-primary border border-primary rounded-full bg-dark -top-4"
+                >
                   Most popular
                 </p>
               )}
@@ -108,14 +66,15 @@ const Pricing: React.FC = () => {
                 </ul>
               </div>
 
-              <a
+              <Link
                 href="#"
                 className={`mt-6 btn ${
                   pkg.popular ? "btn-primary" : "btn-secondary"
                 }`}
               >
-                Start My Project →
-              </a>
+                Start My Project
+                <IoArrowForwardOutline />
+              </Link>
             </article>
           ))}
         </div>

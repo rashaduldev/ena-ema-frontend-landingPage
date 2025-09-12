@@ -2,58 +2,51 @@
 
 **Candidate:** Md Rashadul Islam  
 **Task:** Pixel-perfect conversion of a Figma landing page into a Next.js project  
-**Submission Date:** September 12, 2025  
-**Live Demo:** [Insert Vercel Link Here]  
-**GitHub Repository:** [https://ena-ema-landing.vercel.app]  
-
+**Submission Date:** September 13, 2025  
+**Live Demo:** [https://ena-ema-landing.vercel.app]  
 ---
 
-##  Task Overview
+## Task Overview
 
 This project is a **Next.js landing page** built to exactly match a custom Figma design provided by **Ena Ema Technologies**.  
 
-**Objective:**  
-- Convert the design into a fully responsive web page.  
-- Ensure high-quality, reusable, and maintainable code.  
-- Implement smooth animations and modern UI components.
+**Objectives:**  
+- Convert the design into a fully responsive web page  
+- Ensure high-quality, reusable, and maintainable code  
+- Implement smooth animations and modern UI components  
+
+**Special Notes:**  
+- Animations are implemented using **AOS (Animate On Scroll)**, not `motion.div`, which ensures excellent performance for a **static landing page**  
+- The project is fully **CMS-ready-content**: content can easily be added or updated via the `content` folder using **YAML files**  
+- Optimized for performance and scalability  
+- **Minor spacing differences** (margins) may appear compared to Figma, since Figma sometimes does not display exact spacing; these are intentional and adjusted for **responsiveness and better UX**
 
 ---
 
-##  Technologies Used
+## Technologies Used
 
 - **Next.js 15** – React framework for production-grade apps  
 - **Tailwind CSS** – Utility-first CSS for fast styling  
 - **Radix UI** – Accessible, reusable UI components  
-- **Framer Motion** – Smooth animations for interactive elements  
+- **AOS** – Lightweight scroll animations for high performance  
+- **LANIS** – Smooth scrolling  
 - **TypeScript** – Type safety and clean code  
 - **Vercel** – Deployment platform for live demo  
-- **AOS** – Animate-on-scroll effects  
 
 ---
 
-##  Key Features
+## Key Features
 
 - **Pixel-perfect conversion** of Figma design  
 - Fully **responsive** layout for desktop, tablet, and mobile  
-- **Reusable React components**  
-- Smooth **scroll and element animations**  
-- Clean and structured **codebase** ready for scaling  
+- **Reusable React components** for scalable development  
+- Smooth **scroll and element animations** using AOS  
+- **CMS-ready** structure with YAML in `content` folder for dynamic content management  
+- Optimized **static site performance**, ideal for landing pages  
 
 ---
 
-##  Project Structure
-
-```text
-src/
-├─ components/      # Reusable UI components (buttons, cards, modals)
-├─ layouts/         # Providers and layout wrappers
-├─ partials/        # Landing page sections (Hero, Portfolio, CTA, Pricing)
-├─ hooks/           # Custom hooks (Lenis, AOS)
-├─ styles/          # Global and custom CSS
-└─ pages/           # Next.js pages
-```
-
-# Installation & Development
+## Installation & Development
 
 Follow these steps to set up and run the project locally:
 

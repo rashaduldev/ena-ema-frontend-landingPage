@@ -5,7 +5,7 @@
   @apply visible opacity-100;
 }
 .search-modal-overlay {
-  @apply fixed top-0 left-0 w-full h-full bg-black opacity-50;
+  @apply fixed top-0 left-0 w-full h-full bg-body opacity-50;
 }
 .search-wrapper {
   @apply bg-white  w-[660px] max-w-[96%] mt-24 rounded shadow-lg relative z-10;

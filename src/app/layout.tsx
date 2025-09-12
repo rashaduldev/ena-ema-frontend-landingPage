@@ -1,9 +1,7 @@
-import SearchModal from "@/components/SearchModal";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
-import Header from "@/partials/Header";
 import Providers from "@/layouts/providers/Providers";
 import "@/styles/main.css";
 import { GoogleTagManager } from "@next/third-parties/google";
@@ -70,8 +68,6 @@ export default function RootLayout({
         <Providers>
           <LenisProvider>
             <AOSInit />
-            <Header />
-            <SearchModal />
             <main>{children}</main>
             <Footer />
           </LenisProvider>

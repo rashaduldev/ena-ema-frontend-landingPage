@@ -1,10 +1,14 @@
 import Form from "@/components/Form";
 import Image from "next/image";
-import logoimg from "../../../public/images/Logo.png";
 import { BsStars } from "react-icons/bs";
 import React from "react";
+import { getMDData } from "@/helpers/mdHelper";
+import { markdownify } from "@/lib/utils/textConverter";
 
-const Hero = () => {
+const Banner = () => {
+  const homepage = getMDData<{ banner: any; aboutme: any }>("homepage/_index.md");
+  const { banner } = homepage;
+  
   return (
     <section
       className="relative pt-5 bg-[url('/images/header-top.png')] bg-cover bg-center"
@@ -18,14 +22,14 @@ const Hero = () => {
             className="mx-auto"
             height={27}
             width={120}
-            src={logoimg}
+            src={banner.logo || "logoimg"}
             alt="Company logo"
             priority
           />
         </header>
 
         {/* Banner Content */}
-        <div className="row justify-center text-center mt-28">
+        <div className="row justify-center text-center mt-24">
           <div className="max-w-[960px] mb-8">
             {/* Badge */}
             <p data-aos="fade-up"
@@ -33,22 +37,17 @@ const Hero = () => {
               role="note"
             >
               <BsStars className="text-primary" aria-hidden="true" />
-              <span>Trusted by 30+ startups & entrepreneurs worldwide</span>
+              <span>{banner.highlight}</span>
             </p>
 
             {/* Headline */}
-            <h1 data-aos="fade-up" className="mb-4 text-h3 md:text-7xl font-bold lg:-tracking-[4px]">
-              Strategic Landing Pages That Convert From Just{" "}
-              <strong className="text-primary font-bold">$200</strong>
-            </h1>
-
+            <h1
+            className="mb-4 text-h3 md:text-7xl font-bold lg:-tracking-[4px]"
+              dangerouslySetInnerHTML={markdownify(
+                banner.title.replace(/\$\d+/g, (match:string) => `<span class="text-primary">${match}</span>`)
+              )} /> 
             {/* Subheading */}
-            <p className="mb-8 md:text-lg text-muted-foreground">
-              Stop wasting traffic on generic pages. We deliver premium,
-              conversion-focused landing pages designed, developed, and launched
-              in just 5 days.
-            </p>
-
+            <p className="mb-8 md:text-lg text-muted-foreground" dangerouslySetInnerHTML={markdownify(banner.content)} />
             {/* CTA Form */}
             <Form />
           </div>
@@ -57,4 +56,4 @@ const Hero = () => {
     </section>
   );
 };
-export default Hero;
+export default Banner;
