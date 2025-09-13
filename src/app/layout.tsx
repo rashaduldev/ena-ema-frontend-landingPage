@@ -7,6 +7,7 @@ import "@/styles/main.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import LenisProvider from "@/layouts/providers/LenisProvider";
 import AOSInit from "@/components/AOSInit";
+import ScrollToTopWithProgress from "@/components/ScrollToTopWithProgress";
 
 export default function RootLayout({
   children,
@@ -61,7 +62,6 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-
       {/* body */}
       <body suppressHydrationWarning={true}>
         <TwSizeIndicator />
@@ -71,6 +71,7 @@ export default function RootLayout({
             <main>{children}</main>
             <Footer />
           </LenisProvider>
+          <ScrollToTopWithProgress />
         </Providers>
       </body>
     </html>

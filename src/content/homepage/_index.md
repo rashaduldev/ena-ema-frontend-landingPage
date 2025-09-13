@@ -3,7 +3,7 @@ banner:
   title: "Strategic Landing Pages That Convert From Just $200"
   content: "Stop wasting traffic on generic pages. We deliver premium, conversion-focused landing pages designed, developed, and launched in just 5 days."
   highlight: "Trusted by 30+ startups & entrepreneurs worldwide"
-  logo: "/images/logo.png"
+  logo: "/images/h-logo.png"
   button:
     enable: false
     label: "Get Started For Free"

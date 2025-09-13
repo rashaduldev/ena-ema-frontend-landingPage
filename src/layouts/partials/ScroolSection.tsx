@@ -12,17 +12,23 @@ const AutoScrollSection: React.FC = () => {
   const loopImages = [...images, ...images];
 
   return (
-    <section className="pt-32 overflow-hidden" aria-label="Auto scrolling image showcase">
+    <section
+      className="pt-32 overflow-hidden"
+      aria-label="Auto scrolling image showcase"
+    >
       <div className="flex w-max animate-scroll gap-4">
         {loopImages.map((img, idx) => (
-          <div key={idx} className="relative w-[735px] h-[470px] flex-shrink-0">
+          <div
+            key={idx}
+            className="relative w-[735px] h-[470px] flex-shrink-0"
+          >
             <Image
               src={img}
               alt={`Showcase image ${idx + 1}`}
-              width={735}
-              height={470}
+              fill
               className="rounded-lg object-cover"
               priority={idx === 0}
+              sizes="(max-width: 768px) 100vw, 735px"
             />
           </div>
         ))}
