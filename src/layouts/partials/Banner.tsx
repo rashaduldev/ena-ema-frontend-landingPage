@@ -9,8 +9,6 @@ const Banner = () => {
   const homepage = getMDData<{ banner: any; aboutme: any }>("homepage/_index.md");
   const { banner } = homepage;
   const logoPath = banner.logo ? banner.logo : "/images/logo.png";
-
-  
   return (
     <section
       className="relative pt-5 bg-[url('/images/header-top.png')] bg-cover bg-center"
