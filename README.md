@@ -1,12 +1,9 @@
 # Ena Ema Technologies - Landing Page Conversion
-
-**Candidate:** Md Rashadul Islam  
-**Task:** Pixel-perfect conversion of a Figma landing page into a Next.js project  
-**Submission Date:** September 13, 2025  
-**Live Demo:** [https://ena-ema-landing.vercel.app]  
+**Stack:** Pixel-perfect conversion of a Figma landing page into a Next.js project   
+**Live Site:** [https://ena-ema-landing.vercel.app]  
 ---
 
-## Task Overview
+## Overview
 
 This project is a **Next.js landing page** built to exactly match a custom Figma design provided by **Ena Ema Technologies**.  
 
@@ -66,5 +63,3 @@ npm install
 ```bash
 yarn dev
 ```
-
-Do you also want me to include **Build & Deployment** instructions (like `yarn build` and `yarn start`) in the README?
